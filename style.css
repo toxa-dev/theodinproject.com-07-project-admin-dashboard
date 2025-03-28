@@ -367,7 +367,7 @@ h4 {
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 330px));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 325px));
   grid-auto-rows: minmax(170px, auto);
   justify-content: center;
   gap: 1rem;
