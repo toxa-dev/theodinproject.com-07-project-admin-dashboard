@@ -583,7 +583,7 @@ h4 {
 
 @media only screen and (min-width: 1273px) {
   .projects-container {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 330px));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 325px));
   }
 
   .projects-container {
