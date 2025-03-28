@@ -543,6 +543,7 @@ h4 {
 
   .search-container search {
     position: static;
+    width: 50%;
   }
 
   .search-container svg {
@@ -552,6 +553,7 @@ h4 {
   .search-container input {
     background-color: #e2e8f0;
     padding: 0.4rem 1rem;
+    flex-grow: 1;
   }
 }
 
