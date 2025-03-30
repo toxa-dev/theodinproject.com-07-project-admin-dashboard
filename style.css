@@ -158,6 +158,7 @@ h4 {
   flex-direction: column;
   height: 44px;
   transition: height 0.36s cubic-bezier(0.52, 0.16, 0.24, 1);
+  overflow: hidden;
 }
 
 .sidebar h1,
