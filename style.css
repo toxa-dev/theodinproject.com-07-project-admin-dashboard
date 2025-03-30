@@ -1,5 +1,9 @@
 @import url(https://fonts.bunny.net/css?family=archivo:100,300,600,900);
 
+:root {
+  --scrollbar-w: 0px;
+}
+
 body {
   /*font-family: "Archivo", sans-serif;*/
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
@@ -72,6 +76,18 @@ h4 {
   margin-top: 3rem;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
+.scroll-y {
+  overflow-y: scroll;
+}
+
+.full-height {
+  max-height: 100%;
+}
+
 .small-devices-menu-container {
   order: -1;
 }
@@ -141,7 +157,6 @@ h4 {
   display: flex;
   flex-direction: column;
   height: 44px;
-  overflow: hidden;
   transition: height 0.36s cubic-bezier(0.52, 0.16, 0.24, 1);
 }
 
@@ -161,8 +176,7 @@ h4 {
 }
 
 .expand-full-view-port {
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
 }
 
 .sidebar a {
@@ -223,7 +237,9 @@ h4 {
 
 .search-container search {
   top: 0;
-  right: 12px;
+  /*15px is a scrollbar width.*/
+  /* since it's gonna be absolute pos. and the body overflow is hidden, it will ignore the scrollbar width of the aside element */
+  right: calc(12px + var(--scrollbar-w));
   height: 44px;
 
   display: flex;

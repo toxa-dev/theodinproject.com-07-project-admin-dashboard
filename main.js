@@ -1,6 +1,7 @@
 const menuTrigger = document.querySelector(".menu-trigger");
 const sidabar = document.querySelector(".sidebar");
 const searchSvg = document.querySelector("#search-svg");
+const searchContainer = document.querySelector(".search-container search");
 
 menuTrigger.addEventListener("click", ExpandMenu);
 searchSvg.addEventListener("click", displaySearch);
@@ -8,7 +9,6 @@ searchSvg.addEventListener("click", displaySearch);
 function displaySearch() {
   if (window.innerWidth > 500) return;
 
-  const searchContainer = document.querySelector(".search-container search");
   searchContainer.classList.toggle("position-absolute");
   searchContainer.classList.toggle("margin-search");
 
@@ -26,5 +26,11 @@ function displaySearch() {
 
 function ExpandMenu() {
   sidabar.classList.toggle("expand-full-view-port");
+  sidabar.classList.toggle("scroll-y");
   menuTrigger.classList.toggle("active");
+  document.body.classList.toggle("full-height");
+  document.body.classList.toggle("no-scroll");
+  const root = document.documentElement;
+  const scrollbarWidth = sidabar.offsetWidth - sidabar.clientWidth + "px";
+  root.style.setProperty("--scrollbar-w", scrollbarWidth);
 }
